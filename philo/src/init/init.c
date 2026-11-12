@@ -28,7 +28,6 @@ static int	init_mutexs_2(t_data *data)
 	return (0);
 }
 
-
 static int	init_mutexs(t_data *data)
 {
 	int	i;
@@ -50,8 +49,6 @@ static int	init_mutexs(t_data *data)
 	}
 	return (init_mutexs_2(data));
 }
-
-
 
 int	init_data(t_data *data)
 {

@@ -11,17 +11,17 @@
 /* ************************************************************************** */
 
 #ifndef PHILO_H
- #define PHILO_H
- 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/time.h>
-#include <pthread.h>
-#include <limits.h>
+# define PHILO_H
 
-typedef struct	s_data	t_data;
-typedef struct	s_philo	t_philo;
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <sys/time.h>
+# include <pthread.h>
+# include <limits.h>
+
+typedef struct s_data	t_data;
+typedef struct s_philo	t_philo;
 
 typedef struct s_data
 {
@@ -38,7 +38,7 @@ typedef struct s_data
 	t_philo			*philos;
 }	t_data;
 
-typedef struct	s_philo
+typedef struct s_philo
 {
 	int				id;// de 1 a N
 	int				bouffe_eaten;
@@ -50,15 +50,13 @@ typedef struct	s_philo
 	t_data			*data;
 }	t_philo;
 
-int	pars_arg(int ac, char **av, t_data *data);
-int	init_data(t_data *data);
-int	init_philo(t_data *data);
+int		pars_arg(int ac, char **av, t_data *data);
+int		init_data(t_data *data);
+int		init_philo(t_data *data);
 
 void	*routine(void *arg);
 void	*lone_philo(t_philo *philo);
 void	eat(t_philo *philo);
-
-
 
 void	niq_forks(t_data *data, int count);
 void	niq_mutexs(t_data *data);
@@ -66,11 +64,10 @@ void	niq_philo_mutexs(t_data *data, int count);
 
 void	monitor(t_data *data);
 
-
 long	get_time(void);
 void	ft_usleep(long ms, t_data *data);
 void	print_state(t_philo *philo, char *msg);
-int	is_over(t_data *data);
+int		is_over(t_data *data);
 void	set_over(t_data *data);
 
 #endif
